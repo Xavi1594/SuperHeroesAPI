@@ -17,6 +17,10 @@ components:{
 }
 </script>
 <style lang="scss">
+  body {
+background-color:#d9d9d9 ;
+  }
+   
 main {
   display: grid;
   grid-template-columns: repeat(4,1fr);

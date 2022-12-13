@@ -29,8 +29,7 @@ export default {
     align-items: center;
     width: 12em;
     height: 18em;
-    margin-bottom: 1em;
-    // background-color: chartreuse;
+    
     justify-self:center ;
 
     .card__img {
@@ -46,7 +45,10 @@ export default {
         align-items: center;
         width: 90%;
          height: 5em;
-    }
+         .properties__name {
+            font-weight: bold;
+            
+    }}
 
     .properties__container {
         display: flex;
@@ -61,6 +63,10 @@ export default {
     position: relative;
     left: 36%;
     top: 5%;
+    cursor: pointer;
+    &:hover {
+        color: white;
+    }
 }
 </style>
 
