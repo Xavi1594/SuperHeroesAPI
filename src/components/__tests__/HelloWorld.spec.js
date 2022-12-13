@@ -1,11 +1,12 @@
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import HelloWorld from '../HelloWorld.vue'
+import HeaderOne from '../home/HeaderOne.vue'
 
-describe('HelloWorld', () => {
-  it('renders properly', () => {
-    const wrapper = mount(HelloWorld, { props: { msg: 'Hello Vitest' } })
-    expect(wrapper.text()).toContain('Hello Vitest')
+describe('Header', () => {
+  it('should title h1', () => {
+    const wrapper = mount(HeaderOne)
+    const value = wrapper.find('h1').text()
+    expect(value).toBe('SUPER HEROES UNIVERSE')
   })
 })
