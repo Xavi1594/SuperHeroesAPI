@@ -3,6 +3,8 @@
         <figure class="card__img">
 
             <!-- <img :src="getImage" :alt="card"> -->
+            <i class="fa-regular fa-heart icon-heart"></i>
+
         </figure>
         <div class="card__properties">
             <p class="properties__name"> name Nombre</p>
@@ -34,7 +36,7 @@ export default {
     .card__img {
         width: 100%;
         height: 13em;
-        background-color: red;
+         background-color: red;
     }
 
     .card__properties {
@@ -52,6 +54,13 @@ export default {
         width: 100%;
         margin-top: 1rem;
     }
+}
+.icon-heart {
+    font-size: 2rem;
+    color: black;
+    position: relative;
+    left: 36%;
+    top: 5%;
 }
 </style>
 
