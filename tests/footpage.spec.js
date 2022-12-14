@@ -9,18 +9,25 @@ describe('FootPage', () => {
   beforeEach(() => {
     wrapper = mount(FootPage)
  })
-  it('should title h2', () => {
+  it('the title must be an h2', () => {
     
     const value = wrapper.find('h2').text()
     expect(value).toBe('SUPER HEROES UNIVERSE')
   })
-  }
+
+  it("the footer must have 3 links to social networks", () => {
+    
+    const container = wrapper.findAll('div')[1].html()
+    console.log(container);
+     expect(container).toBe('<div class="footer__container-social-media"><i class="fa-brands fa-instagram icon-media"></i><i class="fa-brands fa-twitter icon-media"></i><i class="fa-brands fa-facebook icon-media"></i></div>')
+  })
+})
 
   
  
 
 
-)
+
 
   
 
