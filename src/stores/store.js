@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export const heroStore = defineStore({
+export default heroeStore = defineStore({
   id: "heroes",
   state: () => ({
     heroes: [],

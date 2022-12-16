@@ -8,7 +8,7 @@ let heroes = reactive([]);
 const getAllSuperHeroes = async () => {
   try {
     const response = await fetch(
-      "https://akabab.github.io/superhero-api/api/all.json"
+      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json"
     );
     const data = await response.json();
     heroes = data.slice(0, 20);
@@ -29,29 +29,28 @@ onBeforeMount(() => {
       v-for="heroe in heroes"
       :key="heroe.id"
       :id="heroe.id"
-      :img="heroe.images.sm"
+      :img="heroe.images.md"
       :name="heroe.name"
-      :alignment="heroe.biography.alignment"
+      :speed="heroe.powerstats.speed"
       :power="heroe.powerstats.power"
+      :strength="heroe.powerstats.strength"
     />
   </main>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 body {
-  background-color: #d3c7c7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url(./assets/FondoHome3.png);
 }
 
 main {
+  border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 100%;
+  width: 60%;
   text-align: center;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  margin: 2em auto;
+  margin: 0 auto;
+  gap: 1em;
 }
 </style>

@@ -8,13 +8,18 @@
       <p class="properties__name">{{ name }}</p>
       <div class="properties__container">
         <p class="properties__property properties__property-power">
-          {{ power }}
+          <i class="fa-solid fa-hand-back-fist"></i> {{ power }}
         </p>
-        <p class="properties__property properties__property-aligment">
-          {{ alignment }}
+        <p class="properties__property properties__property-speed">
+          <i class="fa-solid fa-person-running"></i> {{ speed }}
+        </p>
+        <p class="properties__property properties__property-strength">
+          <i class="fa-solid fa-shield"></i>
+          {{ strength }}
         </p>
       </div>
     </div>
+    <!-- -->
   </div>
 </template>
 <script setup>
@@ -39,27 +44,29 @@ const props = defineProps({
     type: Number,
     // required: true,
   },
-  alignment: {
-    type: String,
+  speed: {
+    type: Number,
+    // required: true,
+  },
+  strength: {
+    type: Number,
     // required: true,
   },
 });
 </script>
 <style lang="scss">
 .card__container {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 16em;
-  height: 22em;
-  justify-self: center;
+  height: 20em;
 
   .card__img {
-    width: 70%;
+    width: 75%;
+    height: 70%;
+
     img {
-      border-radius: 15px;
+      border-radius: 10px;
       height: 100%;
     }
   }
@@ -68,8 +75,8 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 0.5em;
     margin-top: 1rem;
+    font-size: 1em;
     .properties__name {
       font-weight: bold;
     }
@@ -80,6 +87,7 @@ const props = defineProps({
     justify-content: space-around;
     width: 100%;
     margin-top: 1rem;
+    font-weight: bold;
 
     .properties__property {
       padding: 0.2em 0.5em;
@@ -88,8 +96,12 @@ const props = defineProps({
     .properties__property-power {
       background: orange;
     }
-    .properties__property-aligment {
+    .properties__property-speed {
       background: grey;
+    }
+
+    .properties__property-strength {
+      background: rgba(255, 0, 0, 0.719);
     }
   }
 }

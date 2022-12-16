@@ -9,9 +9,7 @@
     </nav>
   </header>
 </template>
-<script>
-export default {};
-</script>
+<!-- <script setup></script> -->
 <style lang="scss">
 @font-face {
   font-family: "marvel";
