@@ -1,52 +1,54 @@
-<template>
-  <HeaderOne/> 
-  <main>
-    <div v-for="heroe in heroes">
-      <Card 
-      :name="heroe[id].name"
-      :race="heroe[id].race"
-      :power="heroe[id].power"
-      :alignment="heroe[id].alignment"
-      /> 
-    </div>
-  <!-- <Card/><Card/> <Card/> <Card/> <Card/> <Card/> <Card/>  -->
-</main>
-</template>
 <script setup>
-import { onBeforeMount } from 'vue';
-import Card from './components/home/Card.vue';
-import HeaderOne from './components/home/HeaderOne.vue';
+import HeaderOne from "./components/home/HeaderOne.vue";
+import { onBeforeMount } from "vue";
+import Card from "./components/home/Card.vue";
 
 let heroes = [];
 
-
-onBeforeMount(()=>{
+onBeforeMount(() => {
   getAllSuperHeroes();
-})
+});
 
-const getAllSuperHeroes = () => {
-  fetch("https://akabab.github.io/superhero-api/api/all.json")
-  .then(res => res.json())
-  .then(data => heroes = data)
-
-
-}
-getAllSuperHeroes()
+const getAllSuperHeroes = async () => {
+  await fetch("https://akabab.github.io/superhero-api/api/all.json")
+    .then((res) => res.json())
+    .then((data) => (heroes = data.slice(0, 20)));
+};
 </script>
-<style lang="scss">
-  body {
-background-color:#d9d9d9 ;
-  }
-   
+
+<template>
+  <HeaderOne />
+  <main>
+    <div v-for="heroe in heroes" :key="heroe.id">
+      <Card
+        :id="heroe.id"
+        :img="heroe.images.sm"
+        :name="heroe.name"
+        :alignment="heroe.biography.alignment"
+        :power="heroe.powerstats.power"
+      />
+    </div>
+  </main>
+</template>
+<style lang="scss" scoped>
+body {
+  background-color: #d3c7c7;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // width: 100vw;
+  // height: 100vh;
+}
+
 main {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  width: 90%;
- text-align: center;
- justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  text-align: center;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin: 0 auto;
+  gap: 3rem;
+  margin: 2em auto;
 }
-
 </style>

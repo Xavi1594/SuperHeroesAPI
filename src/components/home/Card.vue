@@ -1,67 +1,75 @@
 <template>
   <div class="card__container">
     <figure class="card__img">
-      <!-- <img :src="getImage" :alt="card"> -->
+      <img :src="img" alt="heroe" />
       <i class="fa-regular fa-heart icon-heart"></i>
     </figure>
     <div class="card__properties">
-      <p class="properties__name">name Nombre</p>
+      <p class="properties__name">{{ name }}</p>
       <div class="properties__container">
-        <p>race</p>
-        <p>power</p>
-        <p>alinement</p>
+        <p class="properties__property properties__property-power">
+          {{ power }}
+        </p>
+        <p class="properties__property properties__property-aligment">
+          {{ alignment }}
+        </p>
       </div>
     </div>
   </div>
 </template>
 <script setup>
 const props = defineProps({
-    id: {
-        type: Number,
-        required:true,
-    },
+  id: {
+    type: Number,
+    // required: true,
+  },
+  img: {
+    type: String,
+    // required: true,
+  },
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   race: {
     type: String,
-    required: true,
+    // required: true,
   },
   power: {
     type: Number,
-    required: true,
+    // required: true,
   },
   alignment: {
     type: String,
-    required: true,
+    // required: true,
   },
 });
 </script>
 <style lang="scss">
 .card__container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 12em;
-  height: 18em;
-
+  width: 16em;
+  height: 22em;
   justify-self: center;
 
   .card__img {
-    width: 100%;
-    height: 13em;
-    background-color: red;
+    width: 70%;
+    img {
+      border-radius: 15px;
+      height: 100%;
+    }
   }
 
   .card__properties {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 5em;
+    width: 80%;
+    margin: 0.5em;
+    margin-top: 1rem;
     .properties__name {
       font-weight: bold;
     }
@@ -69,20 +77,31 @@ const props = defineProps({
 
   .properties__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     margin-top: 1rem;
+
+    .properties__property {
+      padding: 0.2em 0.5em;
+      border-radius: 5px;
+    }
+    .properties__property-power {
+      background: orange;
+    }
+    .properties__property-aligment {
+      background: grey;
+    }
   }
 }
 .icon-heart {
   font-size: 2rem;
-  color: black;
+  color: white;
   position: relative;
   left: 36%;
-  top: 5%;
+  bottom: 95%;
   cursor: pointer;
   &:hover {
-    color: white;
+    color: red;
   }
 }
 </style>
