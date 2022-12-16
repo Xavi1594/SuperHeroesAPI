@@ -1,44 +1,47 @@
 <script setup>
 import HeaderOne from "./components/home/HeaderOne.vue";
-import { onBeforeMount } from "vue";
+import { onBeforeMount, reactive } from "vue";
 import Card from "./components/home/Card.vue";
 
-let heroes = [];
+let heroes = reactive([]);
+
+const getAllSuperHeroes = async () => {
+  try {
+    const response = await fetch(
+      "https://akabab.github.io/superhero-api/api/all.json"
+    );
+    const data = await response.json();
+    heroes = data.slice(0, 20);
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
 
 onBeforeMount(() => {
   getAllSuperHeroes();
 });
-
-const getAllSuperHeroes = async () => {
-  await fetch("https://akabab.github.io/superhero-api/api/all.json")
-    .then((res) => res.json())
-    .then((data) => (heroes = data.slice(0, 20)));
-};
 </script>
 
 <template>
   <HeaderOne />
   <main>
-    <div v-for="heroe in heroes" :key="heroe.id">
-      <Card
-        :id="heroe.id"
-        :img="heroe.images.sm"
-        :name="heroe.name"
-        :alignment="heroe.biography.alignment"
-        :power="heroe.powerstats.power"
-      />
-    </div>
+    <Card
+      v-for="heroe in heroes"
+      :key="heroe.id"
+      :id="heroe.id"
+      :img="heroe.images.sm"
+      :name="heroe.name"
+      :alignment="heroe.biography.alignment"
+      :power="heroe.powerstats.power"
+    />
   </main>
 </template>
 <style lang="scss" scoped>
 body {
   background-color: #d3c7c7;
   display: flex;
-  // flex-direction: column;
   justify-content: center;
   align-items: center;
-  // width: 100vw;
-  // height: 100vh;
 }
 
 main {
