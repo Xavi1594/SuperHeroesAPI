@@ -1,25 +1,20 @@
 <script setup>
 import { onBeforeMount, reactive } from "vue";
 import { useHeroeStore } from "./stores/store";
-// import { pinia } from "./stores/store";
+
 import HeaderOne from "./components/home/HeaderOne.vue";
 import CardItem from "./components/home/CardItem.vue";
 import FootPage from "./components/home/FootPage.vue";
 
 const heroesStore = useHeroeStore();
 
-// let heroes = reactive([]);
 onBeforeMount(() => {
   getHeroes();
 });
-// DATA
-
-// const loading = ref(true);
 
 // METHODS
 const getHeroes = async () => {
   await heroesStore.fetchHeroes();
-  // loading.value = false;
 };
 </script>
 
