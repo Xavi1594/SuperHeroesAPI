@@ -28,7 +28,7 @@ const getHeroes = async () => {
 
   <main>
     <CardItem
-      v-for="heroe in heroesStore.heroes"
+      v-for="heroe in heroesStore.heroes.slice(148, 168)"
       :key="heroe.id"
       :id="heroe.id"
       :img="heroe.images.lg"
