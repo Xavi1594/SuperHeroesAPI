@@ -1,7 +1,10 @@
+  <script setup> 
+  import HeaderPage from "../components/HeaderPage.vue"
+  import FooterPage from "../components/FooterPage.vue"
+</script>
 <template>
-  <div class="about">
-    <h1>This is an favorites page</h1>
-  </div>
+  <HeaderPage />
+  <FooterPage />
 </template>
 
 <style>
