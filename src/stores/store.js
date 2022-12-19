@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-export default heroeStore = defineStore({
+export const useHeroeStore = defineStore({
   id: "heroes",
   state: () => ({
     heroes: [],
@@ -12,7 +12,12 @@ export default heroeStore = defineStore({
         .then((data) => {
           this.heroes = data;
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          console.log("FIN FETCH");
+        });
     },
   },
 });
