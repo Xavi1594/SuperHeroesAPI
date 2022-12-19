@@ -1,36 +1,32 @@
 <script setup>
-import HeaderOne from "./components/home/HeaderOne.vue";
 import { onBeforeMount, reactive } from "vue";
-import Card from "./components/home/Card.vue";
+import { useHeroeStore } from "./stores/store";
+
+import HeaderOne from "./components/home/HeaderOne.vue";
+import CardItem from "./components/home/CardItem.vue";
 import FootPage from "./components/home/FootPage.vue";
 
-let heroes = reactive([]);
-
-const getAllSuperHeroes = async () => {
-  try {
-    const response = await fetch(
-      "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json"
-    );
-    const data = await response.json();
-    heroes = data.slice(0, 20);
-  } catch (error) {
-    throw new Error(error.message);
-  }
-};
+const heroesStore = useHeroeStore();
 
 onBeforeMount(() => {
-  getAllSuperHeroes();
+  getHeroes();
 });
+
+// METHODS
+const getHeroes = async () => {
+  await heroesStore.fetchHeroes();
+};
 </script>
 
 <template>
   <HeaderOne />
+
   <main>
-    <Card
-      v-for="heroe in heroes"
+    <CardItem
+      v-for="heroe in heroesStore.heroes.slice(148, 168)"
       :key="heroe.id"
       :id="heroe.id"
-      :img="heroe.images.md"
+      :img="heroe.images.lg"
       :name="heroe.name"
       :speed="heroe.powerstats.speed"
       :power="heroe.powerstats.power"
@@ -39,6 +35,7 @@ onBeforeMount(() => {
   </main>
   <FootPage />
 </template>
+
 <style lang="scss">
 body {
   background-image: url(./assets/FondoHome3.png);
