@@ -1,9 +1,11 @@
   <script setup> 
   import HeaderPage from "../components/HeaderPage.vue"
   import FooterPage from "../components/FooterPage.vue"
+import ListHeroes   from "../components/favorites/ListHeroes.vue";
 </script>
 <template>
   <HeaderPage />
+  <ListHeroes />
   <FooterPage />
 </template>
 
