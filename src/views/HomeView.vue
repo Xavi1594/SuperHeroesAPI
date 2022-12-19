@@ -4,7 +4,7 @@ import FooterPage from "../components/home/FooterPage.vue"
 import CardItem from "../components/home/CardItem.vue"
 
 
-import { onBeforeMount, reactive } from "vue";
+import { onBeforeMount } from "vue";
 import { useHeroeStore } from "../stores/store.js";
 
 
