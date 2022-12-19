@@ -2,9 +2,9 @@
 import { onBeforeMount, reactive } from "vue";
 import { useHeroeStore } from "./stores/store";
 
-import HeaderOne from "./components/home/HeaderOne.vue";
+import HeaderPage from "./components/home/HeaderPage.vue";
 import CardItem from "./components/home/CardItem.vue";
-import FootPage from "./components/home/FootPage.vue";
+import FooterPage from "./components/home/FooterPage.vue";
 
 const heroesStore = useHeroeStore();
 
@@ -19,7 +19,7 @@ const getHeroes = async () => {
 </script>
 
 <template>
-  <HeaderOne />
+  <HeaderPage />
 
   <main>
     <CardItem
@@ -33,7 +33,7 @@ const getHeroes = async () => {
       :strength="heroe.powerstats.strength"
     />
   </main>
-  <FootPage />
+  <FooterPage />
 </template>
 
 <style lang="scss">
