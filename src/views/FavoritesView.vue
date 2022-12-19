@@ -1,14 +1,10 @@
-<script>
-
-import StarsRating from "../components/favorites/StarsRating.vue";
-
+  <script setup> 
+  import HeaderPage from "../components/HeaderPage.vue"
+  import FooterPage from "../components/FooterPage.vue"
 </script>
-
 <template>
-
-    <h1>This is an favorites page</h1>
-    <StarsRating />
-
+  <HeaderPage />
+  <FooterPage />
 </template>
 
 <style>

@@ -13,7 +13,7 @@
 <style lang="scss">
 @font-face {
   font-family: "marvel";
-  src: url("../../assets/fonts/Marvel-Regular.ttf");
+  src: url("@/assets/fonts/Marvel-Regular.ttf");
 }
 
 .header {

@@ -1,7 +1,7 @@
 <script setup>
-import HeaderPage from "../components/home/HeaderPage.vue"
-import FooterPage from "../components/home/FooterPage.vue"
-import CardItem from "../components/home/CardItem.vue"
+import HeaderPage from "../components/HeaderPage.vue"
+import FooterPage from "../components/FooterPage.vue"
+import CardItem from "../components/CardItem.vue"
 
 
 import { onBeforeMount } from "vue";
