@@ -1,13 +1,13 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import HeaderOne from '../src/components/home/HeaderOne.vue'
+import HeaderPage from '../src/components/home/HeaderPage.vue'
 
 describe('Header', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = mount(HeaderOne)
+    wrapper = mount(HeaderPage)
  })
   it('should title h1', () => {
     

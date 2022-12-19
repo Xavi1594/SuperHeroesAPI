@@ -4,8 +4,8 @@
       <h1 class="header__title">SUPER HEROES UNIVERSE</h1>
     </div>
     <nav class="header__nav">
-      <a class="nav__link home" href="">Home</a>
-      <a class="nav__link" href="">Favorites</a>
+      <router-link to="/" class="nav__link" href="">Home</router-link>
+      <router-link to="/favorites" class="nav__link" href="">Favorites</router-link>
     </nav>
   </header>
 </template>
