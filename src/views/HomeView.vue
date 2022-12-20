@@ -8,7 +8,6 @@ import { onBeforeMount } from "vue";
 import { useHeroeStore } from "../stores/store.js";
 
 
-
 const heroesStore = useHeroeStore();
 
 onBeforeMount(() => {
@@ -30,12 +29,7 @@ const getHeroes = async () => {
     <CardItem
       v-for="heroe in heroesStore.heroes.slice(148, 168)"
       :key="heroe.id"
-      :id="heroe.id"
-      :img="heroe.images.lg"
-      :name="heroe.name"
-      :speed="heroe.powerstats.speed"
-      :power="heroe.powerstats.power"
-      :strength="heroe.powerstats.strength"
+      :heroe="heroe"
     />
 </main>
 
