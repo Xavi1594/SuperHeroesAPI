@@ -1,51 +1,44 @@
 <template>
-  
-   <h1>Estrellas</h1>
 
-   <div class="rating">
-            <i @click="executeRating" class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-            <i class="rating__star far fa-star"></i>
-   </div>
-      
+<div class="starsAll">
+  <p class="starsContainer">
+    <input id="radio1" type="radio" name="stars" value="5"><!--
+    --><label for="radio1">★</label><!--
+    --><input id="radio2" type="radio" name="stars" value="4"><!--
+    --><label for="radio2">★</label><!--
+    --><input id="radio3" type="radio" name="stars" value="3"><!--
+    --><label for="radio3">★</label><!--
+    --><input id="radio4" type="radio" name="stars" value="2"><!--
+    --><label for="radio4">★</label><!--
+    --><input id="radio5" type="radio" name="stars" value="1"><!--
+    --><label for="radio5">★</label>
+  </p>
+</div>
+
 </template>
-
-<script setup>
-    
-    const ratingStars = [...document.getElementsByClassName("rating__star")];
-
-function executeRating(stars) {
-  const starClassActive = "rating__star fas fa-star";
-  const starClassInactive = "rating__star far fa-star";
-  const starsLength = stars.length;
-  let i;
-  stars.map((star) => {
-    star.onclick = () => {
-      i = stars.indexOf(star);
-
-      if (star.className===starClassInactive) {
-        for (i; i >= 0; --i) stars[i].className = starClassActive;
-      } else {
-        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-      }
-    };
-  });
-}
-executeRating(ratingStars);
-
-</script>
-
 
 <style lang="scss">
 
-.rating {
-   width: 180px;
+.starsContainer  {
+display: flex;
+align-items: center;
+justify-content: center;
+transform: rotateY(0deg) rotate(180deg);
+font-size: 2rem;
 }
 
-.rating__star {
-   cursor: pointer;
-   color: #dabd18b2;
+label {
+  color: grey;
 }
+
+label:hover,
+label:hover ~ label {
+  color: orange;  
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange; 
+}
+
 </style>
+
