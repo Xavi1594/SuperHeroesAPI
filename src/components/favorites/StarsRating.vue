@@ -1,5 +1,5 @@
 <template>
-
+<h1>Estrellas</h1>
 <div class="rating">
          <i class="rating__star far fa-star"></i>
          <i class="rating__star far fa-star"></i>
@@ -10,9 +10,9 @@
 
 </template>
 
-<script>
+<script setup>
 
-const ratingStars = [...document.getElementsByClassName("rating__star")];
+const ratingStars = [(/.rating__star/)];
 
 function executeRating(stars) {
     const starClassActive = "rating__star fas fa-star";
@@ -31,10 +31,13 @@ stars.map((star) => {
          }
       };
    });
-
+   
 }
 
 executeRating(ratingStars);
+
+
+
 
 </script>
 
