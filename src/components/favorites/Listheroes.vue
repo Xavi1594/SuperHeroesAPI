@@ -16,16 +16,27 @@
   right: 5em;
     display: flex;
     width: 20%;
+    height: 30%;
     background-color: red;
     flex-direction: column;
   }
     .list__title {
       font-size: 20px;
       font-weight: bold;
+      color: white;
+      text-align: center;
     }
+    .list__container {
+      background-color: red;
+      padding: 1em;
+    }
+      
     ul {
       display: flex;
       flex-direction: column;
+      background-color: white;
+      padding: 1em;
+      
     }
 
 </style>
