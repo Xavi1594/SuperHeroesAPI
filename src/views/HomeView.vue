@@ -32,6 +32,8 @@ const getHeroes = async () => {
 </template>
 
 <style lang="scss">
+
+
 // body  {
 //   display: flex;
 // }

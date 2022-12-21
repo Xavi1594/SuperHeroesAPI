@@ -27,7 +27,8 @@ const favoriteStore = useHeroeFavoriteStore();
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+
 @media (min-width: 1024px) {
   main {
     border-radius: 10px;
