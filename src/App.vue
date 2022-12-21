@@ -3,7 +3,7 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <RouterView />
+  <RouterView class="router-link-active" />
 </template>
 
 <style lang="scss">
@@ -19,7 +19,6 @@ body {
   }
 
   body {
-    // background-image: url(..../assets/FondoHome3.png);
     background-size: 140%;
     background-position: 48% 10%;
   }
