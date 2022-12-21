@@ -42,7 +42,7 @@ const sendHeroeFavorite = () => {
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .card__container {
   display: flex;
   flex-direction: column;

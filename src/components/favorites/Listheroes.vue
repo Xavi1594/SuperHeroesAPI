@@ -12,6 +12,7 @@ const heroesStore = useHeroeStore();
       <ul>
         <li v-for="heroe in heroesStore.heroes.slice(148, 168)"  :key="heroe.id" :heroe="heroe">
         {{ heroe.name }}
+        <i class="fa-regular fa-heart icon-heart " ></i>
         </li>
         
       </ul>
@@ -66,9 +67,26 @@ const heroesStore = useHeroeStore();
          width: 100%;
          padding-top: 0.5em;
          display: flex;
-         flex-direction: column;
-         font-family: Ariaul
+         font-family: Arial, Helvetica, sans-serif;
+         border: 1px solid grey; 
+         padding: .4em;
+         justify-content: space-between;
+         &:hover{
+          background-color: grey;
+         
+         }
+
     }
+
+    .icon-heart{
+      margin-right: .2em;
+      cursor: pointer;
+      &:hover{
+       color:  red;
+
+      }
+    }
+
   }
   ul::-webkit-scrollbar {
     -webkit-appearance: none;
