@@ -84,7 +84,7 @@ const sendHeroeFavorite = () => {
     color: black;
 
     .properties__property {
-      padding: 0.2em 0.5em;
+      padding: 0.2em 0.3em;
       border-radius: 5px;
     }
     .properties__property-power {
