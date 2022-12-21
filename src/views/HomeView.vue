@@ -44,9 +44,28 @@ main {
   gap: 1em;
 }
 
-@media (max-width: 1370px) {
+@media (max-width: 1500px) {
   main {
     width: 80%;
+  }
+  body {
+    background-image: url(@/assets/FondoHome3.png);
+    background-size: 140%;
+    background-position: 48% 10%;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    width: 80%;
+    grid-template-columns: 1fr;
   }
 }
 </style>

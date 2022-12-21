@@ -43,4 +43,15 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .footer {
+    flex-direction: column;
+
+    .footer__title {
+      font-size: 1em;
+      margin-bottom: 0.4em;
+    }
+  }
+}
 </style>

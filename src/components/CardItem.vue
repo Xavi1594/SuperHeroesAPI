@@ -2,16 +2,21 @@
   <div class="card__container">
     <figure class="card__img">
       <img :src="heroe.images.lg" alt="heroe" />
-      <i class="fa-regular fa-heart icon-heart " v-on:click="sendHeroeFavorite()"></i>
+      <i
+        class="fa-regular fa-heart icon-heart"
+        v-on:click="sendHeroeFavorite()"
+      ></i>
     </figure>
     <div class="card__properties">
       <p class="properties__name">{{ heroe.name }}</p>
       <div class="properties__container">
         <p class="properties__property properties__property-power">
-          <i class="fa-solid fa-hand-back-fist"></i> {{ heroe.powerstats.power }}
+          <i class="fa-solid fa-hand-back-fist"></i>
+          {{ heroe.powerstats.power }}
         </p>
         <p class="properties__property properties__property-speed">
-          <i class="fa-solid fa-person-running"></i> {{ heroe.powerstats.speed }}
+          <i class="fa-solid fa-person-running"></i>
+          {{ heroe.powerstats.speed }}
         </p>
         <p class="properties__property properties__property-strength">
           <i class="fa-solid fa-shield"></i>
@@ -23,7 +28,7 @@
 </template>
 <script setup>
 import { useHeroeFavoriteStore } from "@/stores/storeFavorites";
-import {ref} from "vue";
+import { ref } from "vue";
 
 const favoriteStore = useHeroeFavoriteStore();
 
@@ -33,13 +38,12 @@ const props = defineProps({
   },
 });
 
-const heroe1 = ref({})
+const heroe1 = ref({});
 
 const sendHeroeFavorite = () => {
-  favoriteStore.showHeroes(props.heroe)
-  alert("Se ha añadido un nuevo heroe a tu lista de favoritos")
- }
-
+  favoriteStore.showHeroes(props.heroe);
+  alert("Se ha añadido un nuevo heroe a tu lista de favoritos");
+};
 </script>
 
 <style lang="scss" scoped>
@@ -67,7 +71,7 @@ const sendHeroeFavorite = () => {
     font-size: 1em;
     .properties__name {
       font-weight: bold;
-      color:black;
+      color: black;
     }
   }
 
@@ -77,7 +81,7 @@ const sendHeroeFavorite = () => {
     width: 100%;
     margin-top: 1rem;
     font-weight: bold;
-    color:black;
+    color: black;
 
     .properties__property {
       padding: 0.2em 0.5em;
@@ -104,6 +108,24 @@ const sendHeroeFavorite = () => {
   cursor: pointer;
   &:hover {
     color: red;
+  }
+}
+
+@media (max-width: 1500px) {
+  .card__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20em;
+    // .card__img {
+    //   width: 15%;
+    //   height: 60%;
+
+    //   img {
+    //     border-radius: 10px;
+    //     height: 100%;
+    //   }
+    // }
   }
 }
 </style>

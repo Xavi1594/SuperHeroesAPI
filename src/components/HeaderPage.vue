@@ -5,7 +5,9 @@
     </div>
     <nav class="header__nav">
       <router-link to="/" class="nav__link" href="">Home</router-link>
-      <router-link to="/favorites" class="nav__link" href="">Favorites</router-link>
+      <router-link to="/favorites" class="nav__link" href=""
+        >Favorites</router-link
+      >
     </nav>
   </header>
 </template>
@@ -57,6 +59,13 @@
     .home {
       font-weight: bold;
       color: black;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .header__title {
+      font-size: 2.4rem;
+      padding: 1.8rem 0;
     }
   }
 }

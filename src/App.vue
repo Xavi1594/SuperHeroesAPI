@@ -9,11 +9,24 @@ import { RouterView } from "vue-router";
 <style lang="scss">
 body {
   background-image: url(./assets/FondoHome3.png);
+  background-size: 120%;
+  background-position: 48% 10%;
+}
+@media (max-width: 1500px) {
+  body {
+    background-image: url(@/assets/FondoHome3.png);
+    background-size: 140%;
+    background-position: 48% 10%;
+  }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 350px) {
+  main {
+    width: 90%;
+  }
+
   body {
-    background-image: url(./assets/FondoHome3.png);
+    // background-image: url(..../assets/FondoHome3.png);
     background-size: 140%;
     background-position: 48% 10%;
   }
