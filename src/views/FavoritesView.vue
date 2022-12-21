@@ -65,13 +65,4 @@ const favoriteStore = useHeroeFavoriteStore();
   margin: 0 auto;
   cursor: pointer;
 }
-.card__p:hover {
-  transform: rotate(360deg);
-  font-size: larger;
-  background-color: yellow;
-  color: aqua;
-  box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
-}
-
-
 </style>
