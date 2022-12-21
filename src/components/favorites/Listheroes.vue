@@ -1,11 +1,19 @@
+<script setup>
+import { useHeroeStore } from "@/stores/store.js";
+
+const heroesStore = useHeroeStore();
+
+</script>
 <template>
   <div class="favorites__list-container">
     <h2 class="list__title">Add your favorite Super Hero</h2>
     <div class="list__container">
+     
       <ul>
-        <li>Paco Perez</li>
-        <li>Mariano Rajoy</li>
-        <li>Super Lopez</li>
+        <li v-for="heroe in heroesStore.heroes"  :key="heroe.id" :heroe="heroe">
+        {{ heroe.name }}
+        </li>
+        
       </ul>
     </div>
   </div>
