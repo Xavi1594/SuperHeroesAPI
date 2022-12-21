@@ -12,13 +12,6 @@ body {
   background-size: 120%;
   background-position: 48% 10%;
 }
-@media (max-width: 1500px) {
-  body {
-    background-image: url(@/assets/FondoHome3.png);
-    background-size: 140%;
-    background-position: 48% 10%;
-  }
-}
 
 @media (max-width: 350px) {
   main {

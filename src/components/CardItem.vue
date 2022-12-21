@@ -113,19 +113,19 @@ const sendHeroeFavorite = () => {
 
 @media (max-width: 1500px) {
   .card__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 20em;
-    // .card__img {
-    //   width: 15%;
-    //   height: 60%;
+    width: 13em;
+  }
+}
 
-    //   img {
-    //     border-radius: 10px;
-    //     height: 100%;
-    //   }
-    // }
+@media (max-width: 800px) {
+  .card__container {
+    width: 11em;
+  }
+}
+
+@media (max-width: 400px) {
+  .card__container {
+    width: auto;
   }
 }
 </style>

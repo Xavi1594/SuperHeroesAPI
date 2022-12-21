@@ -32,6 +32,10 @@ const getHeroes = async () => {
 </template>
 
 <style lang="scss">
+// body  {
+//   display: flex;
+// }
+
 main {
   border-radius: 10px;
   display: grid;
@@ -45,9 +49,6 @@ main {
 }
 
 @media (max-width: 1500px) {
-  main {
-    width: 80%;
-  }
   body {
     background-image: url(@/assets/FondoHome3.png);
     background-size: 140%;
