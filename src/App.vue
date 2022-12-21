@@ -23,7 +23,11 @@ body {
     background-position: 48% 10%;
   }
 }
-
+@media (max-width: 1500px) {
+  main {
+    width: 50%;
+  }
+}
 </style>
 
 
