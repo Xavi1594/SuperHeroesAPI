@@ -1,11 +1,20 @@
+<script setup>
+import { useHeroeStore } from "@/stores/store.js";
+
+const heroesStore = useHeroeStore();
+
+</script>
 <template>
   <div class="favorites__list-container">
     <h2 class="list__title">Add your favorite Super Hero</h2>
     <div class="list__container">
+     
       <ul>
-        <li>Paco Perez</li>
-        <li>Mariano Rajoy</li>
-        <li>Super Lopez</li>
+        <li v-for="heroe in heroesStore.heroes.slice(148, 168)"  :key="heroe.id" :heroe="heroe">
+        {{ heroe.name }}
+        <i class="fa-regular fa-heart icon-heart " ></i>
+        </li>
+        
       </ul>
     </div>
   </div>
@@ -52,15 +61,60 @@
       background-color:gainsboro ;
       height: 100%;
       border-radius: 10px;
+      overflow-y:scroll ;
       
      li {
          width: 100%;
          padding-top: 0.5em;
          display: flex;
-         flex-direction: column;
          font-family: Arial, Helvetica, sans-serif;
-     }
+         border: 1px solid grey; 
+         padding: .4em;
+         justify-content: space-between;
+         &:hover{
+          background-color: grey;
+         
+         }
+
     }
+
+    .icon-heart{
+      margin-right: .2em;
+      cursor: pointer;
+      &:hover{
+       color:  red;
+
+      }
+    }
+
+  }
+  ul::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  ul::-webkit-scrollbar:vertical {
+    width: 10px;
+  }
+
+  ul::-webkit-scrollbar-button:increment,
+ .contenedor{ 
+    display: none;
+  }
+
+ ul::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+  ul::-webkit-scrollbar-thumb {
+    background-color: rgba(132, 21, 53, 1);
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+  }
+
+  ul::-webkit-scrollbar-track {
+    border-radius: 10px;
+    }
+
+
 
 </style>
   
