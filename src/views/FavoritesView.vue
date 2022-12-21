@@ -8,6 +8,7 @@ import { useHeroeFavoriteStore } from "@/stores/storeFavorites";
 const favoriteStore = useHeroeFavoriteStore();
 
 
+
 </script>
 <template>
   <HeaderPage />
@@ -15,10 +16,15 @@ const favoriteStore = useHeroeFavoriteStore();
 
 <main>
   <CardItem
-    v-for="heroe in favoriteStore.heroesFavorites"
-    :key="heroe.id"
-    :heroe="heroe"
+  v-for="heroe in favoriteStore.heroesFavorites"
+  :key="heroe.id"
+  :heroe="heroe"
   />
+  <div v-if="favoriteStore.heroesFavorites.length > 0">
+    </div>
+    <div v-else>
+      <p>No has añadido ningún heroe a favoritos</p>
+    </div>
   <ListheroesVue />
 </main>
 
