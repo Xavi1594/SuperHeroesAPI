@@ -38,6 +38,10 @@ const getHeroes = async () => {
 
 <style lang="scss">
 
+body  {
+  display: flex;
+}
+
 main {
   border-radius: 10px;
   display: grid;

@@ -21,8 +21,9 @@ const favoriteStore = useHeroeFavoriteStore();
   />
   <ListheroesVue />
 </main>
-
+<div class="containerFooter">
   <FooterPage />
+  </div>
 </template>
 
 <style>
@@ -44,4 +45,12 @@ const favoriteStore = useHeroeFavoriteStore();
   gap: 1em;
 }
 }
+
+.containerFooter  {
+  
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 </style>

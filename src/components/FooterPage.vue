@@ -20,10 +20,15 @@
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(182, 8, 8, 1) 99%
+    rgba(182, 8, 8, 1) 99% 
   );
   background-color: rgb(0, 0, 0);
   padding: 1rem;
+  width: 100%;
+
+    /*position: relative;
+    bottom: 0;
+    left: 0;*/
 
   .footer__title {
     font-family: Arial, Helvetica, sans-serif;
