@@ -22,6 +22,9 @@ Nos piden unos requisitos mínimos que son los siguientes:
 ### PROTOTIPADO
 
 
+![HomeSuper](https://user-images.githubusercontent.com/117633735/208888266-7fefabef-d8f6-417a-b817-f77bf82619db.png)
+![FigmaSuper](https://user-images.githubusercontent.com/117633735/208888317-93b9573a-5d79-49a8-b0a7-b8620f996ded.png)
+![FigmaMovilSuper](https://user-images.githubusercontent.com/117633735/208888340-5bde5484-5c7e-4bfd-8ee3-1cf2a0402a4b.png)
 
 
 ### HERRAMIENTAS Y LENGUAJES UTILIZADOS
@@ -44,5 +47,5 @@ GitHub para la creación de un repositorio online que nos permitirá, entre otra
  
  
 ### AUTORES:
-Jehisel Ramos, Enol Igarreta, Guillermo Trigueros, Xavi Villaverde y Manu Estrada.
+Jehisel Ramos [https://github.com/JehiselRuth] , Enol Igarreta [https://github.com/EnolCode], Guillermo Trigueros [https://github.com/Guillermo292], Xavi Villaverde [https://github.com/Xavi1594] y Manu Estrada [https://github.com/Manu-Estrada].
 
