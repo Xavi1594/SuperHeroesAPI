@@ -1,58 +1,47 @@
 <template>
   <div class="card__container">
     <figure class="card__img">
-      <img :src="img" alt="heroe" />
-      <i class="fa-regular fa-heart icon-heart"></i>
+      <img :src="heroe.images.lg" alt="heroe" />
+      <i class="fa-regular fa-heart icon-heart " v-on:click="sendHeroeFavorite()"></i>
     </figure>
     <div class="card__properties">
-      <p class="properties__name">{{ name }}</p>
+      <p class="properties__name">{{ heroe.name }}</p>
       <div class="properties__container">
         <p class="properties__property properties__property-power">
-          <i class="fa-solid fa-hand-back-fist"></i> {{ power }}
+          <i class="fa-solid fa-hand-back-fist"></i> {{ heroe.powerstats.power }}
         </p>
         <p class="properties__property properties__property-speed">
-          <i class="fa-solid fa-person-running"></i> {{ speed }}
+          <i class="fa-solid fa-person-running"></i> {{ heroe.powerstats.speed }}
         </p>
         <p class="properties__property properties__property-strength">
           <i class="fa-solid fa-shield"></i>
-          {{ strength }}
+          {{ heroe.powerstats.strength }}
         </p>
       </div>
     </div>
   </div>
 </template>
 <script setup>
+import { useHeroeFavoriteStore } from "@/stores/storeFavorites";
+import {ref} from "vue";
+
+const favoriteStore = useHeroeFavoriteStore();
+
 const props = defineProps({
-  id: {
-    type: Number,
-    // required: true,
-  },
-  img: {
-    type: String,
-    // required: true,
-  },
-  name: {
-    type: String,
-    // required: true,
-  },
-  race: {
-    type: String,
-    // required: true,
-  },
-  power: {
-    type: Number,
-    // required: true,
-  },
-  speed: {
-    type: Number,
-    // required: true,
-  },
-  strength: {
-    type: Number,
-    // required: true,
+  heroe: {
+    type: Object,
   },
 });
+
+const heroe1 = ref({})
+
+const sendHeroeFavorite = () => {
+  favoriteStore.showHeroes(props.heroe)
+  alert("Se ha añadido un nuevo heroe a tu lista de favoritos")
+ }
+
 </script>
+
 <style lang="scss">
 .card__container {
   display: flex;
@@ -78,6 +67,7 @@ const props = defineProps({
     font-size: 1em;
     .properties__name {
       font-weight: bold;
+      color:black;
     }
   }
 
@@ -87,6 +77,7 @@ const props = defineProps({
     width: 100%;
     margin-top: 1rem;
     font-weight: bold;
+    color:black;
 
     .properties__property {
       padding: 0.2em 0.5em;
