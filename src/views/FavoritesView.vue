@@ -8,6 +8,7 @@ import { useHeroeFavoriteStore } from "@/stores/storeFavorites";
 const favoriteStore = useHeroeFavoriteStore();
 
 
+
 </script>
 <template>
   <HeaderPage />
@@ -15,10 +16,15 @@ const favoriteStore = useHeroeFavoriteStore();
 
 <main>
   <CardItem
-    v-for="heroe in favoriteStore.heroesFavorites"
-    :key="heroe.id"
-    :heroe="heroe"
+  v-for="heroe in favoriteStore.heroesFavorites"
+  :key="heroe.id"
+  :heroe="heroe"
   />
+  <div v-if="favoriteStore.heroesFavorites.length > 0">
+    </div>
+    <div v-else>
+      <p class="card__p">No has añadido ningún heroe a favoritos</p>
+    </div>
   <ListheroesVue />
 </main>
 <div class="containerFooter">
@@ -28,11 +34,6 @@ const favoriteStore = useHeroeFavoriteStore();
 
 <style>
 @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
   main {
   border-radius: 10px;
   display: grid;
@@ -52,5 +53,25 @@ const favoriteStore = useHeroeFavoriteStore();
   bottom: 0;
   width: 100%;
 }
+
+.card__p {
+ position: absolute;
+ left: 30%;
+  width: 40%;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.card__p:hover {
+  transform: rotate(360deg);
+  font-size: larger;
+  background-color: yellow;
+  color: aqua;
+  box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+}
+
 
 </style>
