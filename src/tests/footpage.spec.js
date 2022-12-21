@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 
 import { mount } from "@vue/test-utils";
-import FooterPage from "../src/components/FooterPage.vue";
+import FooterPage from "@/components/FooterPage.vue";
 
 describe("FooterPage", () => {
   let wrapper;
