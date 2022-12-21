@@ -23,7 +23,7 @@ const favoriteStore = useHeroeFavoriteStore();
   <div v-if="favoriteStore.heroesFavorites.length > 0">
     </div>
     <div v-else>
-      <p>No has añadido ningún heroe a favoritos</p>
+      <p class="card__p">No has añadido ningún heroe a favoritos</p>
     </div>
   <ListheroesVue />
 </main>
@@ -33,11 +33,6 @@ const favoriteStore = useHeroeFavoriteStore();
 
 <style>
 @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
   main {
   border-radius: 10px;
   display: grid;
@@ -50,4 +45,20 @@ const favoriteStore = useHeroeFavoriteStore();
   gap: 1em;
 }
 }
+.card__p {
+ 
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.card__p:hover {
+  transform: rotate(360deg);
+  font-size: larger;
+}
+
+
 </style>
