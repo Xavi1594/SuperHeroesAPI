@@ -1,12 +1,10 @@
 <script setup>
-import HeaderPage from "../components/HeaderPage.vue"
-import FooterPage from "../components/FooterPage.vue"
-import CardItem from "../components/CardItem.vue"
-
+import HeaderPage from "../components/HeaderPage.vue";
+import FooterPage from "../components/FooterPage.vue";
+import CardItem from "../components/CardItem.vue";
 
 import { onBeforeMount } from "vue";
 import { useHeroeStore } from "../stores/store.js";
-
 
 const heroesStore = useHeroeStore();
 
@@ -18,26 +16,22 @@ onBeforeMount(() => {
 const getHeroes = async () => {
   await heroesStore.fetchHeroes();
 };
-
-
-
 </script>
 
 <template>
-    <HeaderPage />
+  <HeaderPage />
   <main>
     <CardItem
       v-for="heroe in heroesStore.heroes.slice(148, 168)"
       :key="heroe.id"
       :heroe="heroe"
     />
-</main>
+  </main>
 
-    <FooterPage />
+  <FooterPage />
 </template>
 
 <style lang="scss">
-
 main {
   border-radius: 10px;
   display: grid;
@@ -48,5 +42,11 @@ main {
   align-items: center;
   margin: 0 auto;
   gap: 1em;
+}
+
+@media (max-width: 1370px) {
+  main {
+    width: 80%;
+  }
 }
 </style>
