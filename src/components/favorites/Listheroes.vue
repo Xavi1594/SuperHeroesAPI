@@ -107,7 +107,7 @@ ul::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 500px) {
   .favorites__list-container {
     display: none;
   }

@@ -13,7 +13,7 @@ body {
   background-position: 48% 10%;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 500px) {
   main {
     width: 90%;
   }

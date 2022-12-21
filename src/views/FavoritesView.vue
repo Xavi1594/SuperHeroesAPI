@@ -28,16 +28,25 @@ const favoriteStore = useHeroeFavoriteStore();
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 1050px) {
-  .main {
-    grid-template-columns: repeat(2, 1fr);
-    width: 90%;
+// main{
+//   grid-template-columns:  repetat;
+// }
+@media (max-width: 1450px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .containerFooter {
     position: absolute;
     bottom: 0;
     width: 100%;
+  }
+}
+
+@media (max-width: 780px) {
+  main {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 .card__p {
@@ -51,6 +60,7 @@ const favoriteStore = useHeroeFavoriteStore();
   margin: 0 auto;
   cursor: pointer;
 }
+
 .footer {
   position: fixed;
   bottom: 0;
