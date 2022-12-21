@@ -46,8 +46,9 @@ const favoriteStore = useHeroeFavoriteStore();
 }
 }
 .card__p {
- 
-  width: 80%;
+ position: absolute;
+ left: 30%;
+  width: 40%;
   padding: 20px;
   text-align: center;
   border: 2px solid black;
@@ -58,6 +59,9 @@ const favoriteStore = useHeroeFavoriteStore();
 .card__p:hover {
   transform: rotate(360deg);
   font-size: larger;
+  background-color: yellow;
+  color: aqua;
+  box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
 }
 
 
