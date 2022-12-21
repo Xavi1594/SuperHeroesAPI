@@ -4,6 +4,7 @@ import FooterPage from "../components/FooterPage.vue";
 import CardItem from "../components/CardItem.vue";
 import ListheroesVue from "../components/favorites/Listheroes.vue";
 import { useHeroeFavoriteStore } from "@/stores/storeFavorites";
+import StarsRating from "../components/favorites/StarsRating.vue";
 
 const favoriteStore = useHeroeFavoriteStore();
 </script>
@@ -11,11 +12,10 @@ const favoriteStore = useHeroeFavoriteStore();
   <HeaderPage />
 
   <main>
-    <CardItem
-      v-for="heroe in favoriteStore.heroesFavorites"
-      :key="heroe.id"
-      :heroe="heroe"
-    />
+    <div v-for="heroe in favoriteStore.heroesFavorites" :key="heroe.id">
+      <StarsRating />
+      <CardItem :heroe="heroe" />
+    </div>
     <div v-if="favoriteStore.heroesFavorites.length > 0"></div>
     <div v-else>
       <p class="card__p">No has añadido ningún heroe a favoritos</p>
@@ -28,9 +28,6 @@ const favoriteStore = useHeroeFavoriteStore();
 </template>
 
 <style lang="scss" scoped>
-main {
-  // grid-template-columns: repeat(3, 1fr);
-}
 @media (min-width: 1050px) {
   .main {
     grid-template-columns: repeat(2, 1fr);

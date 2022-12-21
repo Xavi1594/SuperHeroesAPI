@@ -32,6 +32,15 @@ const getHeroes = async () => {
 </template>
 
 <style lang="scss">
+<<<<<<< HEAD
+=======
+
+
+// body  {
+//   display: flex;
+// }
+
+>>>>>>> 1b37528ddf1f0fd76d305c9f8f66c2770900e234
 main {
   border-radius: 10px;
   display: grid;
