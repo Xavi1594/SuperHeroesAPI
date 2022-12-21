@@ -15,9 +15,6 @@ export const useHeroeStore = defineStore({
         .catch((err) => {
           console.log(err);
         })
-        .finally(() => {
-          console.log("FIN FETCH");
-        });
     },
   },
 });
